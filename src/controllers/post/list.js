@@ -2,10 +2,8 @@ const { getPosts } = require("./../../models/post");
 
 function controller(req, res) {
   let all_posts = getPosts();
-  console.log(all_posts);
   //convert object to array of id
   let posts_send = Object.keys(all_posts).map((key) => {
-    console.log(key);
     let post = all_posts[key];
     post["id"] = key;
     return post;

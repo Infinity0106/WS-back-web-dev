@@ -3,7 +3,6 @@ const { updatePost, getPost } = require("./../../models/post");
 let pass_params = ["avatar", "img", "desc", "title"];
 
 function controller(req, res) {
-  console.log(req.params.id);
   let post_body = getPost(req.params.id);
   Object.keys(req.body).forEach((key) => {
     if (!pass_params.includes(key)) return;

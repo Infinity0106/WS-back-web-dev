@@ -1,5 +1,8 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -16,7 +19,7 @@ app.get("/test", function (req, res) {
 app.get("/test/:id", function (req, res) {
   res.send(`get one: ${req.params.id}`);
 });
-app.post("/test ", function (req, res) {
+app.post("/test", function (req, res) {
   res.send(req.body);
 });
 app.put("/test/:id", function (req, res) {
